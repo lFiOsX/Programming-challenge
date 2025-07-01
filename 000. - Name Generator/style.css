@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+}
+
+.container{
+    background-color: red;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: auto;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#description{
+    font-size: 19px;
+    font-style: italic;
+}
+
+#label{
+    margin: 20px;
+    width: 300px;
+    background-color: beige;
+    height: 30px;
+    text-align: center;
+
+    font-size: 25px;
+    line-height: 30px;
+
+    border: 2px dotted black;
+    border-radius: 20px;
+    transition: 2s;
+}
+
+select{
+    padding: 5px;
+}
+
+#generate-button{
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+
+    border-radius: 5px;
+
+}
+
+
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Generator</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generator imion</h1>
+        <div id="description">Naciśnij przycisk aby wylosować imię</div>
+        <form action="">
+            <div id="label"></div>
+            <select class="select-list" name="sex" id="sex" required>
+                <option value="">Wybierz jedną z opcji</option>
+                <option value="man">Mężczyzna</option>
+                <option value="woman">Kobieta</option>
+                <option value="man-woman">Mężczyzna lu kobieta</option>
+            </select>
+            <button id="generate-button">Generate</button>
+        </form>
+    </div>
+</body>
+</html>
