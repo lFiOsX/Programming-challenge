@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="menu">
+        <!-- menu haburger -->
+         <!-- opcje:           
+          -nowa gra
+          -zmien poziom
+
+          -->
+    </div>
+    <div id="container">
+        <h1>Higher or Lower</h1>
+        <p>Traf liczbę od 0 do 100.</p>
+        <form action="POST" id="game-form">
+            <!-- informacja wyzej nizej -->
+            <div id="information"> Wyżej / Niżej </div>
+            <div id="player-number"></div>
+            <!-- pole do wpisywania liczby -->
+             <input type="text" name="player-number-input"  id="player-number-input" placeholder="Wpisz zgadywaną liczbę" required maxlength="3">
+            <input type="button" value="ZGADNIJ!">
+
+        </form>
+        <!-- licznik skuch -->
+        <div>Licznik prób: </div>
+        <div>Liczby nie trafione: </div>
+
+         <!-- licznik gier, licznik stosunku rozegranych gier do trafien na liczbe prób (skutecznosc w procentach) -->
+         <div id="stats-container">
+             <h4 id="stats">Statystyki</h4>
+             <div id="played-games">Rozegranych gier: </div>
+             <div id="effectiveness">Skuteczność: </div>
+         </div>
+
+
+        <!-- po wygraniu gry ma byc jakis efekt wygrania -->
+
+        <!-- jesli wyżej niżej mamy zmienic styl żeby podpowiadał wizualnie -->
+
+        <!-- Mozna poziomy - łaty : 0-10, sredni 0-50, trudny 0-100 -->
+
+
+    </div>
+
+</body>
+</html>

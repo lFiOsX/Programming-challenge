@@ -7,23 +7,23 @@ var label = document.querySelector("#label");
 // label.textContent = document.querySelector(".select-list")[0].textContent;
 
 var selectList = document.querySelector(".select-list");
-selectList.addEventListener("change", function(){
-    // label.textContent = document.querySelector(".select-list").value;
-})
 
 
 generateButton.onclick = function(){
-    // w zalezności od wyboruu w select umiesc albo 1  WYLOSOWANE żeńskie, albo męskie
+    // w zależności od wyboru w select umieść albo 1  WYLOSOWANE żeńskie, albo męskie
     
     switch(document.querySelector(".select-list").value){
         case "man":
-        label.textContent = "imię męskie";
+            label.textContent = "imię męskie";
+            break;
         case "woman":
-        label.textContent = "imię żeńskies";
-        //wylosuj 1 imię z imoion rzeńskich
+            label.textContent = "imię żeńskies";
+            break;
+            //wylosuj 1 imię z imoion rzeńskich
         case "man-woman":
-        label.textContent = "imię randomowe";
-        //wylosuj 1 imię z obu list
+            label.textContent = "losowo";
+            break;
+            //wylosuj 1 imię z obu list
     }
     
 };

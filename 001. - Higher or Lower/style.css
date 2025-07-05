@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    height: 100vh;
+    position: relative;
+}
+
+h1{
+    font-size: 58px;
+    font-family: "Bitcount Grid Double", system-ui;
+    font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+
+    padding: 5px;
+}
+
+p{
+    font-style: italic;
+    font-size: 20px;
+
+    padding: 10px;
+}
+
+#information{
+    font-size: 30px;
+    padding: 20px;
+}
+
+#player-number{
+    background-color: #68909b;
+    width: 400px;
+    height: 50px;
+}
+
+#player-number-input{
+    font-size: 12px;
+    width: 200px;
+    padding: 5px;
+    font-weight: 600;
+    /* border: 2x solid #68909b; */
+    border: 2px solid black;
+}
+
+#game-form input:last-child{
+    padding: 4px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+}
+
+form{
+    padding: 30px;
+}
+
+#stats-container{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 40px 0;
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+
+}
+#stats-container h4{
+    text-decoration: underline;
+}
+
+
+
