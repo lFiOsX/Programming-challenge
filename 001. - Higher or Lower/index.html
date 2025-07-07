@@ -30,23 +30,25 @@
         <h1>Higher or Lower</h1>
         <p>Traf liczbę od 0 do 100.</p>
         <form action="POST" id="game-form">
+
             <!-- informacja wyzej nizej -->
             <div id="information"> Wyżej / Niżej </div>
             <div id="player-number"></div>
+
             <!-- pole do wpisywania liczby -->
-             <input type="text" name="player-number-input"  id="player-number-input" placeholder="Wpisz zgadywaną liczbę" required maxlength="3">
+             <input type="text" name="player-number-input" id="player-number-input" placeholder="Wpisz zgadywaną liczbę" required maxlength="3">
             <input type="button" value="ZGADNIJ!">
 
         </form>
         <!-- licznik skuch -->
-        <div>Licznik prób: </div>
-        <div>Liczby nie trafione: </div>
+        <div class="statistic">Licznik prób: </div>
+        <div class="statistic">Liczby nie trafione: </div>
 
          <!-- licznik gier, licznik stosunku rozegranych gier do trafien na liczbe prób (skutecznosc w procentach) -->
          <div id="stats-container">
-             <h4 id="stats">Statystyki</h4>
-             <div id="played-games">Rozegranych gier: </div>
-             <div id="effectiveness">Skuteczność: </div>
+             <h4>Statystyki</h4>
+             <div id="played-games" class="statistic">Rozegranych gier: </div>
+             <div id="effectiveness" class="statistic">Skuteczność: </div>
          </div>
 
 
