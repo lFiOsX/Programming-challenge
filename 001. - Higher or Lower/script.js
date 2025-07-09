@@ -38,6 +38,10 @@ window.onload = function(){
      * cel danej rundy / wylosowana liczba do zgadnięcia
      */
     var targetNumber;
+    /**
+     * tablica - przechowuje numery uzytownika
+    */
+   var userNumbers = [];
 
         
 
@@ -49,10 +53,6 @@ window.onload = function(){
     }
 
 
-    /**
-     * tablica - przechowuje numery uzytownika
-    */
-   var userNumbers = [];
    // po naciśnięciu przycisku zapisz podaną liczbe przez uzytkowanika do tablicy i wypisz ją sformatowaną
    sendButton.addEventListener("click", function(){
        userNumbers[userNumbers.length] = " " + playerNumberInput.value;
@@ -73,8 +73,20 @@ window.onload = function(){
         default:
             targetNumber = null;
             break;
-        }
+    }
     
+    if(targetNumber === userNumbers[0]){
+        alert("wygrałeś grę!");
+        // dodać tu w przyszłości cos bardziej fajnego + resetowanie gry i dodawanie statystyk
+    }
+
+    //tymczasowo!!! --------------------------------
+    //mozna kiedyś zrobic cheat który aktywuje to i znika
+
+    var tempPresentVariableInParag = document.querySelector("#container p:first-of-type");
+    tempPresentVariableInParag.textContent += " " + targetNumber;
+    //-------------------------------------------
+
 
 
         
