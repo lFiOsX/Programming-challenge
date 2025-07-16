@@ -41,7 +41,7 @@ window.onload = function(){
     /**
      * tablica - przechowuje numery uzytownika
     */
-   var userNumbers = [];
+    var userNumbers = [];
 
         
 
@@ -55,8 +55,15 @@ window.onload = function(){
 
    // po naciśnięciu przycisku zapisz podaną liczbe przez uzytkowanika do tablicy i wypisz ją sformatowaną
    sendButton.addEventListener("click", function(){
-       userNumbers[userNumbers.length] = " " + playerNumberInput.value;
-       playerNumbers.textContent = userNumbers;
+    //dodaj do tablicy i sparsuj na numer dane wprowadzone przez użytkownika
+       userNumbers.push(Number(playerNumberInput.value));
+       playerNumbers.textContent = userNumbers.join(", ");
+
+       if(userNumbers.includes(targetNumber)){
+    //    if(userNumbers.includes(targetNumber)){
+           alert("wygrałeś grę!");
+           // dodać tu w przyszłości cos bardziej fajnego + resetowanie gry i dodawanie statystyk
+       }
     })
     
     // tymczasowo
@@ -64,6 +71,7 @@ window.onload = function(){
     switch(gameLevel){
         case "easy": // 0-10
             targetNumber = randomNumber(11);
+            break;
         case "normal": // 0-50
             targetNumber = randomNumber(51);
             break; 
@@ -75,16 +83,12 @@ window.onload = function(){
             break;
     }
     
-    if(targetNumber === userNumbers[0]){
-        alert("wygrałeś grę!");
-        // dodać tu w przyszłości cos bardziej fajnego + resetowanie gry i dodawanie statystyk
-    }
 
     //tymczasowo!!! --------------------------------
     //mozna kiedyś zrobic cheat który aktywuje to i znika
 
     var tempPresentVariableInParag = document.querySelector("#container p:first-of-type");
-    tempPresentVariableInParag.textContent += " " + targetNumber;
+    tempPresentVariableInParag.textContent += " " + targetNumber + " tablica: " + userNumbers[0];
     //-------------------------------------------
 
 
@@ -96,6 +100,9 @@ window.onload = function(){
     //jesli liczba ger zostanie zmieniona to zrestartuj gre
     //funkcja restartu gry
     
+    
+
+    // usunąć powtórzenia liczb i białe znaki i jesli nie jest liczba
 
 };
 
