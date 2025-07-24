@@ -4,6 +4,26 @@
  * 
  */
 
+// zrobic podpowiedz wyzej nizej
+//zrobic po kliknięciu enter przesłanie liczby
+// po wysłaniu liczby, zresetowac pole wpisania
+
+/**
+ * liczni żyć gier
+ */
+var gameCount;
+/**
+ * poziom gry
+ */
+var gameLevel;
+/**
+ * cel danej rundy / wylosowana liczba do zgadnięcia
+ */
+var targetNumber;
+/**
+ * tablica - przechowuje numery uzytownika
+*/
+const userNumbers = [];
 
 window.onload = function(){
     /**
@@ -26,70 +46,78 @@ window.onload = function(){
      * wszystkie divy, które zawierają dane statystyczne
      */
     var statatistic = document.querySelector(".statistic");
-    /**
-     * liczni żyć gier
-     */
-    var gameCount;
-    /**
-     * poziomu gry
-     */
-    var gameLevel;
-    /**
-     * cel danej rundy / wylosowana liczba do zgadnięcia
-     */
-    var targetNumber;
-    /**
-     * tablica - przechowuje numery uzytownika
-    */
-    var userNumbers = [];
+
+
+    
+
+    
+    
+    // po naciśnięciu przycisku zapisz podaną liczbe przez uzytkowanika do tablicy i wypisz ją sformatowaną
+    sendButton.addEventListener("click", function(){
 
         
+        // Jeśli dane wprowadzone przez użytkownika to nie liczba
+        if(isNaN(playerNumberInput.value)){
+            console.log("--Wpisana liczba to nie liczba--");
+            alert("to nie liczba!");
+            // mozna dodac coś lepszego później
+        }
+        else if(playerNumberInput.value == targetNumber ){
+            console.log("--Gracz wygrał--");
+            
+            alert("wygrałeś grę!");
+            //++ dodać tu w przyszłości cos bardziej fajnego + resetowanie gry i dodawanie statystyk
 
-    
+        }
+        else{
+            console.log("--Nie trafiona liczba--");
+            
+            //dodaj do tablicy i sparsuj na liczbę dane wprowadzone przez użytkownika
+            userNumbers.push(Number(playerNumberInput.value));
+            playerNumbers.textContent = userNumbers.join(", ");
+            
 
-    //Wylosuj liczbę
-    function randomNumber(maxNumb){
-        return Math.floor(Math.random() * maxNumb);
-    }
+            // zasugeruj czy wyzej czy nizej
 
+            
+            //dodaj do liczników statystyke licznik prób i nie trafione liczby
+        }
 
-   // po naciśnięciu przycisku zapisz podaną liczbe przez uzytkowanika do tablicy i wypisz ją sformatowaną
-   sendButton.addEventListener("click", function(){
-    //dodaj do tablicy i sparsuj na numer dane wprowadzone przez użytkownika
-       userNumbers.push(Number(playerNumberInput.value));
-       playerNumbers.textContent = userNumbers.join(", ");
+        // 
+            // --------- tymczasowo - prezentacja wpisanych liczb i celu -----------
+            var tempPresentVariableInParag = document.querySelector("#container p:first-of-type");
+            tempPresentVariableInParag.textContent = "Cel: " + targetNumber + " tablica: " + userNumbers;
+            //-------------------------------------------
+        })
+        
 
-       if(userNumbers.includes(targetNumber)){
-    //    if(userNumbers.includes(targetNumber)){
-           alert("wygrałeś grę!");
-           // dodać tu w przyszłości cos bardziej fajnego + resetowanie gry i dodawanie statystyk
-       }
-    })
-    
-    // tymczasowo
-    gameLevel = "easy";
-    switch(gameLevel){
-        case "easy": // 0-10
+        //Wylosuj liczbę
+        function randomNumber(maxNumb){
+            return Math.floor(Math.random() * maxNumb);
+        }
+        //tymczasowo!!! --------------------------------
+        //mozna kiedyś zrobic cheat który aktywuje to i znika
+        
+        
+        // tymczasowo
+        gameLevel = "hard";
+        switch(gameLevel){
+            case "easy": // 0-10
             targetNumber = randomNumber(11);
             break;
-        case "normal": // 0-50
+            case "normal": // 0-50
             targetNumber = randomNumber(51);
             break; 
-        case "hard":// 0 -100
+            case "hard":// 0 -100
             targetNumber = randomNumber(101);
             break;
-        default:
-            targetNumber = null;
-            break;
-    }
-    
+            default:
+                targetNumber = null;
+                break;
+            }
+            
 
-    //tymczasowo!!! --------------------------------
-    //mozna kiedyś zrobic cheat który aktywuje to i znika
-
-    var tempPresentVariableInParag = document.querySelector("#container p:first-of-type");
-    tempPresentVariableInParag.textContent += " " + targetNumber + " tablica: " + userNumbers[0];
-    //-------------------------------------------
+    };
 
 
 
@@ -104,5 +132,4 @@ window.onload = function(){
 
     // usunąć powtórzenia liczb i białe znaki i jesli nie jest liczba
 
-};
 
